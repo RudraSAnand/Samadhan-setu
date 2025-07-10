@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head><title>All Contact Messages</title></head><body>
+<h1>All Contact Messages</h1>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Email</th><th>Subject</th><th>Message</th><th>Created At</th></tr>
+{% for m in messages %}<tr><td>{{ m.id }}</td><td>{{ m.name }}</td><td>{{ m.email }}</td><td>{{ m.subject }}</td><td>{{ m.message }}</td><td>{{ m.created_at }}</td></tr>{% endfor %}
+</table>
+</body></html>

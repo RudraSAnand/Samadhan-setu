@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>FAQs | Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbaY9R+L... (cut) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .faq-item {
+      background: var(--white);
+      margin: 1em 0;
+      padding: 1em 1.3em;
+      border-radius: var(--radius);
+      box-shadow: 0 1px 8px #aaa2;
+      cursor: pointer;
+      transition: box-shadow .2s;
+    }
+    .faq-q {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s;
+    }
+    .faq-item.active .faq-a {
+      max-height: 200px;
+      margin-top: 0.5em;
+    }
+    .faq-item.active {
+      box-shadow: 0 6px 22px #3089e422;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav class="container hellog flex gap-2" aria-label="Main navigation">
+    <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+    <div class="hellog flex gap-2" style="flex:1">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/submit/">Report Grievance</a>
+      <a href="/track/">Track Status</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container iitp" style="max-width:600px;">
+  <h1 class="do-center">Frequently Asked Questions</h1>
+  <div id="faqSetEn">
+    <div class="faq-item">
+      <div class="faq-q">How do I report a grievance?<span>+</span></div>
+      <div class="faq-a">Use the 'Report Grievance' button on our homepage, fill out the form with details and supporting images, and submit. Simple and quick!</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How can I track my complaint status?<span>+</span></div>
+      <div class="faq-a">Go to 'Track Status', enter your complaint ID or phone number, and follow the progress in real time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is my data secure?<span>+</span></div>
+      <div class="faq-a">Absolutely. We only use your information to resolve grievances and keep you updated. We do not share your data with third parties.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can I submit complaints anonymously?<span>+</span></div>
+      <div class="faq-a">Currently, basic personal information is required for follow-up and accountability purposes.</div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer container hellog flex gap-2" style="justify-content:space-between;padding:2em 0;border-top:2px solid #e4e9ef;align-items:center;">
+  <div>
+    <div style="font-weight:bold">Samadhan Setu</div>
+    <address style="font-style:normal">Office Address - Patna, Bihar</address>
+    <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+  </div>
+  <div class="hellog flex gap-2">
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+  </div>
+  <div style="font-size:0.95em;">© 2025 Samadhan Setu. All rights reserved.</div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', function () {
+      this.parentElement.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

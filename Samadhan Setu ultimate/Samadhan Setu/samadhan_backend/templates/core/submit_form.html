@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Report Grievance Samadhan Setu</title>
+  <link rel="stylesheet" href="/static/style/main.css">
+  <link rel="stylesheet" href="/static/style/responsive.css">
+</head>
+<body>
+<main class="container" style="max-width:440px;">
+  <h1 class="do-center">Report a Grievance</h1>
+  <form id="grievanceForm" method="post" enctype="multipart/form-data" action="/submit/" autocomplete="off" novalidate style="background:var(--white);border-radius:var(--radius);box-shadow:0 1px 16px #2471A320;padding:2.5em 1em;margin-bottom:2em;">
+  {% csrf_token %}
+  <label for="name">Name</label>
+  <input required type="text" id="name" name="name" autocomplete="name" value="{{ form.name.value|default_if_none:'' }}">
+  <label for="email">Email</label>
+  <input required type="email" id="email" name="email" autocomplete="email" value="{{ form.email.value|default_if_none:'' }}">
+  <label for="phone">Phone</label>
+  <input required type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" autocomplete="tel" placeholder="10-digit number" value="{{ form.phone.value|default_if_none:'' }}">
+  <label for="adhar">Adhar Number</label>
+  <input required type="text" id="adhar" name="adhar" autocomplete="off" value="{{ form.adhar.value|default_if_none:'' }}">
+  <label for="category">Category</label>
+  <select required id="category" name="category">
+    <option value="">Select Category</option>
+    <option {% if form.category.value == 'Roads' %}selected{% endif %}>Roads</option>
+    <option {% if form.category.value == 'Water' %}selected{% endif %}>Water</option>
+    <option {% if form.category.value == 'Sanitation' %}selected{% endif %}>Sanitation</option>
+    <option {% if form.category.value == 'Electricity' %}selected{% endif %}>Electricity</option>
+    <option {% if form.category.value == 'Healthcare' %}selected{% endif %}>Healthcare</option>
+    <option {% if form.category.value == 'Other' %}selected{% endif %}>Other</option>
+  </select>
+  <label for="title">Title</label>
+  <input required type="text" id="title" name="title" maxlength="200" value="{{ form.title.value|default_if_none:'' }}">
+  <label for="description">Description</label>
+  <textarea required id="description" name="description" rows="4" maxlength="1000" style="resize:vertical;">{{ form.description.value|default_if_none:'' }}</textarea>
+  <label for="location">Location (Manual or Auto)</label>
+  <div style="display:flex;gap:0.5em;align-items:center;">
+    <input type="text" id="location" name="location" placeholder="full address" style="flex:1;" value="{{ form.location.value|default_if_none:'' }}">
+    <button id="autoLocation" type="button" aria-label="Detect my location" style="font-size:1.25em;background:var(--green);color:var(--white);padding:0.5em 1em;">📍</button>
+  </div>
+  <label for="image">Image Upload (optional)</label>
+  <input type="file" id="image" name="image" accept="image/*">
+  <div class="progress-bar-outer" aria-hidden="true"><div class="progress-bar-inner" id="formProgress"></div></div>
+  <button type="submit" class="btn mt-2">Submit Grievance</button>
+</form>
+</main>
+</body></html>

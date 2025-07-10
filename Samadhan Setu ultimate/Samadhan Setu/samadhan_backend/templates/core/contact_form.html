@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact Us Samadhan Setu</title>
+  <link rel="stylesheet" href="/static/style/main.css">
+  <link rel="stylesheet" href="/static/style/responsive.css">
+</head>
+<body>
+<main class="container " style="max-width:590px;">
+  <h1 class="do-center">Contact Samadhan Setu</h1>
+  <form method="post" autocomplete="off" novalidate style="background:var(--white);padding:2em 1em;border-radius:var(--radius);box-shadow:0 1px 14px #2471A320;margin-bottom:2em;">
+    {% csrf_token %}
+  {% csrf_token %}
+  <label for="cName">Name</label>
+  <input type="text" id="cName" name="name" required value="{{ form.name.value|default_if_none:'' }}">
+  <label for="cEmail">Email</label>
+  <input type="email" id="cEmail" name="email" required autocomplete="email" value="{{ form.email.value|default_if_none:'' }}">
+  <label for="cSubject">Subject</label>
+  <input type="text" id="cSubject" name="subject" value="{{ form.subject.value|default_if_none:'' }}">
+  <label for="cMessage">Message</label>
+  <textarea id="cMessage" name="message" required rows="4" maxlength="600" style="resize:vertical;">{{ form.message.value|default_if_none:'' }}</textarea>
+  <button class="btn" type="submit">Send Message</button>
+  </form>
+  <div style="background:var(--gray);border-radius:var(--radius);padding:1.5em 1.2em;">
+    <h2 style="margin-top:0">Office Address</h2>
+    <div>Samadhan Setu Headquarters<br>Patna ,Bihar<br>Email: <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a><br>Phone: +91-1234-567890</div>
+    <div style="margin:1.1em 0 0 0">
+      <img src="https://same-assets.com/maps/demo-office-map.png" alt="Office Location Map" style="width:100%;max-width:360px;border-radius:12px;box-shadow:0 2px 20px #2183b315;">
+    </div>
+  </div>
+</main>
+</body></html>

@@ -1,0 +1,101 @@
+:root {
+  --blue: #2471A3;
+  --saffron: #FF9933;
+  --green: #388E3C;
+  --orange: #fd7e14;        
+  --white: #ffffff;
+  --gray: #cccccc;          
+  --black: #222831;
+  --radius: 8px;
+  --transition: 0.25s;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: var(--gray);
+  color: var(--black);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.8em 0 0.3em 0;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+a {
+  color: var(--blue);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--saffron);
+}
+
+
+/* Buttons and Forms  */
+
+button, .btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.75em 2em;
+  font-size: 1rem;
+  background: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 6px rgba(36,113,163,0.07);
+}
+button:hover, .btn:hover {
+  background: var(--saffron);
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  padding: 0.65em 1em;
+  margin-bottom: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color var(--transition);
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--blue);
+  outline: none;
+}
+
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+.do-center { text-align: center; }
+.flex { display: flex; }
+.gap-2 { gap: 2em; }
+.mt-2 { margin-top: 2em; }
+.mb-2 { margin-bottom: 2em; }
+
+
+
+@media (max-width: 700px) {
+  .container { padding: 0 0.7em; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.4rem; }
+}

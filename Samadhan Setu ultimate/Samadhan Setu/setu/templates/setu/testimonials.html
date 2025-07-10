@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Testimonials | Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbaY9R+L... (cut) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    .testimonial-list {
+      display: flex;
+      gap: 2em;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 2em 0;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 18px #2471A320;
+      padding: 2em 1.4em;
+      max-width: 310px;
+      text-align: center;
+      position: relative;
+    }
+    .stars {
+      color: gold;
+      font-size: 1.2em;
+      margin: 0.5em 0 0.8em 0;
+      letter-spacing: .11em;
+    }
+    .t-name {
+      font-weight: 700;
+      font-size: 1.09em;
+      color: var(--blue);
+      margin-top: 1em;
+    }
+    .t-story {
+      font-size: 0.98em;
+      color: #353535;
+      margin-top: 0.7em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container hellog flex gap-2" aria-label="Main navigation">
+    <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+    <div class="hellog flex gap-2" style="flex:1">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/submit/">Report Grievance</a>
+      <a href="/track/">Track Status</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container iitp do-center">
+  <h1>Voices of Change</h1>
+  <p style="max-width:520px;margin:0 auto 2em auto;">Stories of trust, hope and resolution — from the people, for the people.</p>
+  <div class="testimonial-list">
+    <div class="testimonial-card">
+      <div class="stars" aria-label="5 star rating">★★★★★</div>
+      <div style="min-height:48px;"><img src="https://media.istockphoto.com/id/1367068216/photo/indian-farmer-stock-photo.jpg?s=2048x2048&w=is&k=20&c=QQ3TqfEQ-eOUXvrXRTPjkd7Q-k3BlDe9lXUpCPhI86o=" alt="testimonial avatar" style="width:48px;height:48px;border-radius:60px;"></div>
+      <div class="t-name">Rajesh Prasad</div>
+      <div class="t-story">“It used to be dark at night, there was no electricity. I filed a complaint here. In two weeks, electric poles and wires were installed. Now our homes have light.All thanks to Samadhan Setu.”</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars" aria-label="4 star rating">★★★★☆</div>
+      <div style="min-height:48px;"><img src="https://as2.ftcdn.net/v2/jpg/05/57/69/27/1000_F_557692714_mWe42f6lqGZI36sIWOp2h3D7GQh7TA1X.jpg" alt="testimonial avatar" style="width:48px;height:48px;border-radius:60px;"></div>
+      <div class="t-name">Pooja Devi</div>
+      <div class="t-story">“The village drains were clogged, and there was filth everywhere. We reported our problem here. In just a few days, the drains were cleaned. Now the village is neat and clean”</div>
+    </div>
+    <div class="testimonial-card">
+      <div class="stars" aria-label="5 star rating">★★★★★</div>
+      <div style="min-height:48px;"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzKZhdbkesLAIVa-P5rAob2UoJLJiae3NQXd3sd8N4oM65hIPI5viVoSA&s" alt="testimonial avatar" style="width:48px;height:48px;border-radius:60px;"></div>
+      <div class="t-name">Imran Alam</div>
+      <div class="t-story">“The road in our village was in very bad condition. We registered our complaint here. Within a few weeks, a new road was built. Now the children have no problem going to school. Thank you for creating this bridge.”</div>
+    </div>
+  </div>
+
+  <div style="margin:2em auto 0 auto;max-width:540px;font-size:1em;">
+    <strong>Have a story to share?</strong> Email <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+    and become part of our civic success gallery.
+  </div>
+</main>
+
+<footer class="footer container hellog flex gap-2" style="justify-content:space-between;padding:2em 0;border-top:1px solid #e4e9ef;align-items:center;">
+  <div>
+    <strong>Samadhan Setu</strong>
+    <address style="font-style:normal">Office Address – Patna, Bihar</address>
+    <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+  </div>
+  <div class="hellog flex gap-2">
+   <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+  </div>
+  <div style="font-size:0.95em;">© 2025 Samadhan Setu. All rights reserved.</div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

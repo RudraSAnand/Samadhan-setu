@@ -1,0 +1,15 @@
+@media (max-width: 500px) {
+  nav {
+    flex-direction: column;
+    padding: 0.5em 0;
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+  }
+  .hero {
+    padding: 2em 0.5em;
+  }
+}
+

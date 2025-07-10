@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbaY9R+L... (cut) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+
+<body>
+  <header>
+    <nav class="container hellog flex gap-2" aria-label="Main navigation">
+      <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+      <div class="hellog flex gap-2" style="flex:1">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'submit' %}">Report Grievance</a>
+        <a href="{% url 'track' %}">Track Status</a>
+        <a href="{% url 'testimonials' %}">Testimonials</a>
+        <a href="{% url 'faq' %}">FAQ</a>
+        <a href="{% url 'contact' %}">Contact</a>
+        <a href="/admin/">Admin</a>
+
+      </div>
+      <div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero container do-center " style="padding:3em 0;">
+      <h1>Connecting Citizens to Solutions Instantly.</h1>
+      <p style="font-size:1.3em;max-width:480px;margin:1em auto 2em auto;color:var(--black)">Empowering Citizens,
+        Simplifying Governance.<br><span style="color:var(--saffron)">A bridge of trust, transparency, and effective
+          resolution.</span></p>
+      <a href="{% url 'submit' %}" class="btn" style="font-size:1.15em">Report a Grievance</a>
+
+      <div class="hellog flex gap-2 do-center mt-2" style="justify-content:center">
+        <div
+          style="background:var(--white);border-radius:var(--radius);padding:1.4em 2.5em;box-shadow:0 3px 16px rgba(36,113,163,0.07);margin:0 0.5em">
+          <div id="complaintsResolved" style="font-size:2em;font-weight:700;color:var(--green)">8</div>
+          <div>Complaints Resolved</div>
+        </div>
+        <div
+          style="background:var(--white);border-radius:var(--radius);padding:1.4em 2.5em;box-shadow:0 3px 16px rgba(36,113,163,0.07);margin:0 0.5em">
+          <div id="citizensServed" style="font-size:2em;font-weight:700;color:var(--saffron)">10</div>
+          <div>Citizens Served</div>
+        </div>
+        <div
+          style="background:var(--white);border-radius:var(--radius);padding:1.4em 2.5em;box-shadow:0 3px 16px rgba(36,113,163,0.07);margin:0 0.5em">
+          <div id="departmentsOnboarded" style="font-size:2em;font-weight:700;color:var(--blue)"></div>
+          <div>Departments Onboarded</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer container hellog flex gap-2"
+    style="justify-content:space-between;padding:2em 0;border-top:1px solid #e4e9ef;align-items:center;">
+    <div>
+      <div style="font-weight:bold">Samadhan Setu</div>
+      <address style="font-style:normal">Office Address- Patna,Bihar</address>
+      <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+    </div>
+    <div class="hellog flex gap-2">
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+
+    </div>
+    <div style="font-size:0.95em;">© 2025 Samadhan Setu. All rights reserved.</div>
+  </footer>
+<!-- <script src="{% static 'js/main.js' %}"></script> -->
+<script src="{% static 'js/index.js' %}"></script>
+
+</body>
+
+</html>

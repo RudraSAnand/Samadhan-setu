@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel | Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbaY9R+L... (cut) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+
+<header>
+  <nav class="container hellog flex gap-2" aria-label="Main navigation">
+    <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+    <div class="hellog flex gap-2" style="flex:1">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'submit' %}">Report Grievance</a>
+      <a href="{% url 'track' %}">Track Status</a>
+      <a href="{% url 'map' %}">Live Map</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container iitp">
+  <h1>Admin Panel</h1>
+
+  <form class="hellog flex gap-2" style="margin-bottom:1.5em;flex-wrap:wrap;align-items:center;">
+    <select>
+      <option>All Categories</option>
+      <option>Roads</option>
+      <option>Water</option>
+      <option>Sanitation</option>
+      <option>Other</option>
+    </select>
+    <select>
+      <option>All Status</option>
+      <option>Pending</option>
+      <option>In Progress</option>
+      <option>Resolved</option>
+    </select>
+    <select>
+      <option>Sort by Date</option>
+      <option>Sort by Urgency</option>
+    </select>
+    <input type="search" placeholder="Search by keyword..." style="flex:1;min-width:160px;">
+    <button class="btn" style="padding:0.6em 1.7em;">Apply</button>
+  </form>
+
+  <div style="overflow-x:auto;">
+    <table aria-label="Complaints grid">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Timestamp</th>
+          <th>Urgency</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Pothole near Sector 9</td>
+          <td>Roads</td>
+          <td><span class="chip chip-pending">Pending</span></td>
+          <td>2024-04-16 10:22</td>
+          <td style="color:var(--saffron);font-weight:bold">High</td>
+          <td class="actions">
+            <button class="btn" style="background:var(--green);">Mark Progress</button>
+            <button class="btn" style="background:var(--saffron);">Resolve</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Broken Water Line</td>
+          <td>Water</td>
+          <td><span class="chip chip-inprogress">In Progress</span></td>
+          <td>2024-04-14 09:15</td>
+          <td style="color:#E67E22;">Medium</td>
+          <td class="actions">
+            <button class="btn" style="background:var(--green);">Resolve</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Overflowing Drain</td>
+          <td>Sanitation</td>
+          <td><span class="chip chip-pending">Pending</span></td>
+          <td>2024-04-18 14:31</td>
+          <td style="color:var(--saffron);font-weight:bold">High</td>
+          <td class="actions">
+            <button class="btn" style="background:var(--green);">Mark Progress</button>
+          </td>
+        </tr>
+        <tr>
+          <td>Streetlight Out at Gate 4</td>
+          <td>Roads</td>
+          <td><span class="chip chip-resolved">Resolved</span></td>
+          <td>2024-04-11 20:40</td>
+          <td style="color:var(--green);">Normal</td>
+          <td class="actions">
+            <button class="btn" disabled>Resolved</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="font-size:0.95em;text-align:right;color:#aaa;">All data is dummy/prototype only.</div>
+</main>
+
+<footer class="footer container hellog flex gap-2" style="justify-content:space-between;padding:2em 0;border-top:1px solid #e4e9ef;align-items:center;">
+  <div>
+    <div style="font-weight:bold">Samadhan Setu</div>
+    <address style="font-style:normal">Office Address – City, State 000000</address>
+    <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+  </div>
+  <div class="hellog flex gap-2">
+  <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+  </div>
+  <div style="font-size:0.95em;">© 2025 Samadhan Setu. All rights reserved.</div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

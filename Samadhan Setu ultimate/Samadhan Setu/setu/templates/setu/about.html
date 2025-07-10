@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>About Us | Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbaY9R+L... (cut) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+
+<header>
+  <nav class="container hellog flex gap-2" aria-label="Main navigation">
+    <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+    <div class="hellog flex gap-2" style="flex:1">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'submit' %}">Report Grievance</a>
+      <a href="{% url 'track' %}">Track Status</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container iitp">
+  <section class="do-center" style="margin-bottom:3em;">
+    <h1>About Samadhan Setu</h1>
+    <p style="font-size:1.15em;max-width:600px;margin:0 auto;">
+      <strong>Empowering Citizens, Simplifying Governance.</strong> Samadhan Setu is India’s trusted digital bridge for civic engagement, grievance redressal, and transparent governance; enabling every citizen’s voice to create meaningful change.
+    </p>
+  </section>
+
+  <section style="margin-bottom:2.5em;">
+    <h2>Our Mission &amp; Vision</h2>
+    <div class="hellog flex gap-2" style="flex-wrap:wrap;align-items:center;">
+      <div style="flex:1;min-width:270px;">
+        <h3 style="color:var(--saffron);">Mission</h3>
+        <p>To make grievance reporting seamless, tracking transparent, and resolutions accountable — establishing trust at every step of civic governance.</p>
+      </div>
+      <div style="flex:1;min-width:270px;">
+        <h3 style="color:var(--green);">Vision</h3>
+        <p>To set a new benchmark for citizen engagement by harnessing modern technology, design, and empathy-driven processes — unlocking a confident, trusting India.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:2.5em;">
+    <h2>Platform Evolution</h2>
+    <ol style="border-left:4px solid var(--blue);padding-left:1.6em;max-width:720px;margin:0 auto;">
+      <li><strong>2025:</strong> Conceptualization for capstone project (IIT Patna)</li>
+      <li><strong>April 2025:</strong> Initial prototyping and frontend</li>
+      <li><strong>May 2025:</strong> Backend started</li>
+      <li><strong>May–June 2025:</strong> Backend completed</li>
+      <li><strong>July 2025:</strong> Final capstone presentation at IIT Patna</li>
+    </ol>
+  </section>
+
+  <section style="margin-bottom:3em;">
+    <h2>Governance Team</h2>
+    <div class="hellog flex gap-2" style="flex-wrap:wrap;justify-content:center;">
+      <div style="background:rgba(255, 255, 0, 0.156);padding:1.5em 1em;border-radius:var(--radius);box-shadow:0 1px 8px #2471A340;text-align:center;min-width:220px;margin:1em;">
+        <div style="font-weight:bold;">Rudra Shanker Anand</div>
+        <div style="color:rgb(255, 111, 0)">Frontend Developer, UI/UX Designer,</div>
+      </div>
+      <div style="background:white;padding:1.5em 1em;border-radius:var(--radius);box-shadow:0 1px 8px #2471A340;text-align:center;min-width:220px;margin:1em;">
+        <div style="font-weight:bold;">Sudhanshu</div>
+        <div style="color:blueviolet">Database creator</div>
+      </div>
+      <div style="background:white;padding:1.5em 1em;border-radius:var(--radius);box-shadow:0 1px 8px #2471A340;text-align:center;min-width:220px;margin:1em;">
+        <div style="font-weight:bold;">Sharique</div>
+        <div style="color:rgb(82, 134, 4)">Front-end developer</div>
+      </div>
+      <div style="background:white;padding:1.5em 1em;border-radius:var(--radius);box-shadow:0 1px 8px #2471A340;text-align:center;min-width:220px;margin:1em;">
+        <div style="font-weight:bold;">Ajay</div>
+        <div style="color:brown">Backend developer</div>
+      </div>
+      <div style="background:white;padding:1.5em 1em;border-radius:var(--radius);box-shadow:0 1px 8px #2471A340;text-align:center;min-width:220px;margin:1em;">
+
+        <div style="font-weight:bold;">Shanu</div>
+        <div style="color:rgb(42, 136, 165)">Backend developer</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer container hellog flex gap-2" style="justify-content:space-between;padding:2em 0;border-top:1px solid #e4e9ef;align-items:center;">
+  <div>
+    <div style="font-weight:bold">Samadhan Setu</div>
+    <address style="font-style:normal">Office Address – Patna City, Bihar</address>
+    <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+  </div>
+  <div class="hellog flex gap-2">
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+  </div>
+  <div style="font-size:0.95em;">© 2025 Samadhan Setu. All rights reserved.</div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

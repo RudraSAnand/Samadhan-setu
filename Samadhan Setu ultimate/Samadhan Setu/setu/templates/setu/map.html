@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Live Grievance Map | Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+  <style>
+    .map-outer {
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 1px 9px #2471A320;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 2em;
+      padding: 2em;
+    }
+    .legend {
+      display: flex;
+      gap: 1em;
+      justify-content: center;
+      margin-top: 1.2em;
+      flex-wrap: wrap;
+    }
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3em;
+    }
+    .pin {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .pin-roads { background: var(--saffron); }
+    .pin-water { background: #5dbfff; }
+    .pin-sanitation { background: var(--green); }
+    .pin-pending { background: #d4a61c; }
+    .pin-inprogress { background: var(--blue); }
+    .pin-resolved { background: #388E3C; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="container hellog flex gap-2" aria-label="Main navigation">
+    <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+    <div class="hellog flex gap-2" style="flex:1">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/submit/">Report Grievance</a>
+      <a href="/track/">Track Status</a>
+      <a href="/map/">Live Map</a>
+      <a href="/testimonials/">Testimonials</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container iitp">
+  <h1 class="do-center">Live Grievance Map</h1>
+
+  <div class="map-outer">
+    <div class="hellog flex gap-2" style="justify-content:center;margin-bottom:0.6em;">
+      <select id="mapCategory">
+        <option value="">All Categories</option>
+        <option>Roads</option>
+        <option>Water</option>
+        <option>Sanitation</option>
+      </select>
+      <select id="mapStatus">
+        <option value="">All Status</option>
+        <option>Pending</option>
+        <option>In Progress</option>
+        <option>Resolved</option>
+      </select>
+    </div>
+
+    <div id="dummyMap" style="margin:0 auto;position:relative;width:360px;height:280px;background:#e7ecf5;border-radius:16px;">
+    </div>
+
+    <div class="legend">
+      <span><span class="pin pin-roads"></span> Roads</span>
+      <span><span class="pin pin-water"></span> Water</span>
+      <span><span class="pin pin-sanitation"></span> Sanitation</span>
+      <span><span class="pin pin-pending"></span> Pending</span>
+      <span><span class="pin pin-inprogress"></span> In Progress</span>
+      <span><span class="pin pin-resolved"></span> Resolved</span>
+    </div>
+  </div>
+
+  <div style="text-align:center;font-size:0.98em;max-width:480px;margin:0 auto;">
+    See live reports and government responsiveness geographically.<br>
+    <em>All pins are dummy demo data for prototype.</em>
+  </div>
+</main>
+
+<footer class="footer container hellog flex gap-2" style="justify-content:space-between;padding:2em 0;border-top:1px solid #e4e9ef;align-items:center;">
+  <div>
+    <div style="font-weight:bold">Samadhan Setu</div>
+    <address style="font-style:normal">Office Address – Patna, Bihar</address>
+    <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+  </div>
+  <div class="hellog flex gap-2">
+    <a href="#" aria-label="Twitter">🐦</a>
+    <a href="#" aria-label="Facebook">📘</a>
+    <a href="#" aria-label="WhatsApp">💬</a>
+    <a href="#" aria-label="Instagram">📷</a>
+  </div>
+  <div style="font-size:0.95em;">© 2025 Samadhan Setu. All rights reserved.</div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/map.js' %}"></script>
+</body>
+</html>

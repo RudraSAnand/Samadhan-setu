@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html><head><title>All Complaints</title></head><body>
+<h1>All Complaints</h1>
+<table border="1">
+<tr><th>ID</th><th>Name</th><th>Category</th><th>Title</th><th>Status</th><th>Created At</th></tr>
+{% for c in complaints %}<tr><td>{{ c.id }}</td><td>{{ c.name }}</td><td>{{ c.category }}</td><td>{{ c.title }}</td><td>{{ c.status }}</td><td>{{ c.created_at }}</td></tr>{% endfor %}
+</table>
+</body></html>

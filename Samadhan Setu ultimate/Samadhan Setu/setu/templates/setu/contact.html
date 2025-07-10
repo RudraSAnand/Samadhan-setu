@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Contact Us | Samadhan Setu</title>
+  <link rel="stylesheet" href="{% static 'style/main.css' %}">
+  <link rel="stylesheet" href="{% static 'style/responsive.css' %}">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-TbaY9R+L... (cut) ..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="{% static 'js/main.js' %}"></script>
+</head>
+<body>
+
+<header>
+  <nav class="container hellog flex gap-2" aria-label="Main navigation">
+    <div class="logo" style="font-size:1.4em;color:var(--blue);font-weight:bold">Samadhan Setu</div>
+    <div class="hellog flex gap-2" style="flex:1">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'submit' %}">Report Grievance</a>
+      <a href="{% url 'track' %}">Track Status</a>
+      <a href="#">Testimonials</a>
+      <a href="#">FAQ</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container" style="max-width:590px;">
+  <h1 class="do-center">Contact Samadhan Setu</h1>
+
+  <form id="contactForm" method="POST" action="{% url 'submit_contact' %}" style="background:var(--white);padding:2em 1em;border-radius:var(--radius);">
+    {% csrf_token %}
+    <label for="cName">Name</label>
+    <input type="text" id="cName" name="name" required>
+
+    <label for="cEmail">Email</label>
+    <input type="email" id="cEmail" name="email" required autocomplete="email">
+
+    <label for="cSubject">Subject</label>
+    <input type="text" id="cSubject" name="subject">
+
+    <label for="cMessage">Message</label>
+    <textarea id="cMessage" name="message" required rows="4" maxlength="600" style="resize:vertical;"></textarea>
+
+    <button class="btn" type="submit">Send Message</button>
+  </form>
+
+  <div style="background:var(--gray);border-radius:var(--radius);padding:1.5em 1.2em;">
+    <h2 style="margin-top:0">Office Address</h2>
+    <div>
+      Samadhan Setu Headquarters<br>
+      Patna, Bihar<br>
+      Email: <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a><br>
+      Phone: +91-1234-567890
+    </div>
+    <div style="margin:1.1em 0 0 0">
+      <img src="https://same-assets.com/maps/demo-office-map.png" alt="Office Location Map" style="width:100%;max-width:360px;">
+    </div>
+  </div>
+</main>
+
+<footer class="footer container hellog flex gap-2" style="justify-content:space-between;padding:2em 0;border-top:1px solid #ccc;">
+  <div>
+    <div style="font-weight:bold">Samadhan Setu</div>
+    <address style="font-style:normal">Office Address 🏢 Patna, Bihar</address>
+    <a href="mailto:contact@samadhansetu.in">contact@samadhansetu.in</a>
+  </div>
+  <div class="hellog flex gap-2">
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+<a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+
+  </div>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // prevent form reload
+
+    const formData = new FormData(this);
+
+    fetch('{% url "submit_contact" %}', {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert(data.message);
+        if (data.status === 'success') {
+            this.reset();  // clear the form
+        }
+    })
+    .catch(err => {
+        alert("Something went wrong!");
+        console.error(err);
+    });
+});
+</script>
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
